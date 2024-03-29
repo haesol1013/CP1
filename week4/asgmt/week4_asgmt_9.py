@@ -2,11 +2,8 @@ def palindrome(word, cnt, reversed_word=''):
     if cnt > -1:
         reversed_word = word[cnt]
         return reversed_word + palindrome(word=word, cnt=cnt-1)
-    elif cnt == -1:
-        return palindrome(word=word, cnt=cnt-1, reversed_word=reversed_word)
     else:
-        result = 1 if word == reversed_word else 0
-        return result
+        return reversed_word
 
 
 T = int(input())
