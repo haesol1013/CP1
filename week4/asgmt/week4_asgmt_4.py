@@ -1,8 +1,8 @@
 def count(string, char_):
-    c = 0
+    cnt = 0
+    
     for i in string:
         if char_ == i:
-            c += 1
+            cnt += 1
 
-    return c
-
+    return cnt
