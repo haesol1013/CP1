@@ -9,6 +9,3 @@ def power(base, exponent=2):
             result = result * (1 / base)
 
     return result
-
-
-print(power(2, 0.5))
