@@ -1,15 +1,17 @@
-def palindrome(word):
-    reversed_word = ''.join(reversed(word))
-
-    if reversed_word == word:
-        return 1
+def palindrome(word, cnt, reversed_word=''):
+    if cnt > -1:
+        reversed_word = word[cnt]
+        return reversed_word + palindrome(word=word, cnt=cnt-1)
+    elif cnt == -1:
+        return palindrome(word=word, cnt=cnt-1, reversed_word=reversed_word)
     else:
-        return 0
+        result = 1 if word == reversed_word else 0
+        return result
 
 
 T = int(input())
 
 for i in range(T):
     input_word = input()
-    result = palindrome(input_word)
-    print(result)
+    len_ = len(input_word)
+    print(palindrome(input_word, len_-1))
