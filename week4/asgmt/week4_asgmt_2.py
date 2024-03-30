@@ -5,7 +5,7 @@ def power(base, exponent=2):
         for i in range(exponent):
             result = result * base
     else:
-        for i in range(exponent, -1):
-            result = result * (1 / base)
+        for i in range(exponent, 0):
+            result = result / base
 
     return result
