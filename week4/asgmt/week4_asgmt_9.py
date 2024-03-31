@@ -8,7 +8,7 @@ def palindrome(word):
         return 1
 
 
-T = int(input())
-for i in range(T):
+t = int(input())
+for i in range(t):
     input_word = input()
     print(palindrome(input_word))
