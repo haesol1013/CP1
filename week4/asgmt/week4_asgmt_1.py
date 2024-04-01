@@ -22,8 +22,7 @@ def mod(num1: int, num2: int) -> int:
 
 
 if __name__ == "__main__":
-    for i in range(8):
-        a, b = map(int, sys.stdin.readline().split())
-        print(mod(a, b))
+    a, b = map(int, sys.stdin.readline().split())
+    print(mod(a, b))
 
 
