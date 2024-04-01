@@ -1,7 +1,8 @@
-string = input()
-vowels = 'aeiouywAEIOUYW'
+def fibo(n):
+    if n <= 2:
+        return n-1
+    elif n > 2:
+        return fibo(n-2) + fibo(n-1)
 
-for i in range(len(string)):
 
-    if string[i] not in vowels:
-        print(string[i], end='')
+print(fibo(10))

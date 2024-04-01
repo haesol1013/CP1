@@ -24,5 +24,3 @@ def mod(num1: int, num2: int) -> int:
 if __name__ == "__main__":
     a, b = map(int, sys.stdin.readline().split())
     print(mod(a, b))
-
-
