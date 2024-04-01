@@ -1,21 +1,29 @@
-def mod(m, n):
-    if m > 0:
-        while m > 0:
-            m -= n
-        if m == 0:
-            return m
-        else:
-            return m + n
-
-    elif m < 0:
-        while m < 0:
-            m += n
-        return m
-
-    else:
-        return m
+import sys
 
 
-a, b = map(int, input().split())
-print(mod(a, b))
-print(a % b)
+def mod(num1: int, num2: int) -> int:
+    opposite_sign = num1 * num2 < 0
+    need_inverse = num2 < 0
+
+    num1 = abs(num1)
+    num2 = abs(num2)
+    same_num = num1 == num2
+
+    while num1 >= num2:
+        num1 -= num2
+
+    if opposite_sign and not same_num:
+        num1 = num2 - num1
+
+    if need_inverse:
+        num1 *= -1
+
+    return num1
+
+
+if __name__ == "__main__":
+    for i in range(8):
+        a, b = map(int, sys.stdin.readline().split())
+        print(mod(a, b))
+
+
