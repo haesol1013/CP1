@@ -1,4 +1,3 @@
-
 def mod(num1, num2):
     opposite_sign = num1 * num2 < 0
     need_inverse = num2 < 0

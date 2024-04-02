@@ -1,5 +1,10 @@
-def fibo(n):
-    if n <= 2:
-        return n-1
-    elif n > 2:
+def fibo(n: int) -> int:
+    if n > 2:
         return fibo(n-2) + fibo(n-1)
+    else:
+        return n - 1
+
+
+if __name__ == "__main__":
+    a = int(input())
+    print(fibo(a))

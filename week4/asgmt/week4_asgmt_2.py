@@ -1,4 +1,4 @@
-def power(base, exponent=2):
+def power(base: int, exponent: int = 2) -> float:
     result = 1
 
     if exponent >= 0:
@@ -9,3 +9,8 @@ def power(base, exponent=2):
             result = result / base
 
     return result
+
+
+if __name__ == "__main__":
+    a, b = map(int, input().split())
+    print(power(a, b))

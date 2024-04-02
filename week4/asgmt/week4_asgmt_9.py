@@ -1,4 +1,4 @@
-def palindrome(word):
+def palindrome(word: str) -> int:
     if len(word) > 1:
         if word[0] == word[-1]:
             return palindrome(word[1:-1])
@@ -8,7 +8,8 @@ def palindrome(word):
         return 1
 
 
-t = int(input())
-for i in range(t):
-    input_word = input()
-    print(palindrome(input_word))
+if __name__ == "__main__":
+    t = int(input())
+    for i in range(t):
+        input_word = input()
+        print(palindrome(input_word))

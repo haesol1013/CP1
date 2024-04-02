@@ -1,4 +1,4 @@
-def count(string: str, target:str ) -> int:
+def count(string: str, target: str) -> int:
     cnt = 0
 
     for i in string:
@@ -16,5 +16,6 @@ def count2(string: str, target: str) -> int:
     return len(string) - len(string.replace(target, ''))
 
 
-print(count1("hello", 'e'))
-print(count2("hello", "e"))
+if __name__ == "__main__":
+    a, b = input().split()
+    print(count(a, b))
