@@ -1,8 +1,11 @@
-def standardization(input_list):
-    micro = sum([i for i in input_list]) / len(input_list)
-    sigma = sum([(i-micro)**2 for i in input_list]) / len(input_list)
-    return [(i-micro) / (sigma**0.5) for i in input_list]
 
 
-list_ = list(map(int, input().split()))
-print(standardization(list_))
+def standardization(list_x: list) -> list:
+    mu = sum(list_x) / len(list_x)
+    std = sum([(x-mu)**2 for x in list_x]) / len(list_x)
+    return [(x-mu) / std**0.5 for x in list_x]
+
+
+if __name__ == "__main__":
+    list_a = list(map(int, input().split()))
+    print(standardization(list_a))

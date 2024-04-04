@@ -1,9 +1,10 @@
-a = input().split()
-b = input().split()
+list_a = input().split()
+list_b = input().split()
 result = []
 
-for i in range(len(a)):
-    result.append(a[i])
-    result.append(b[i])
+for i in range(len(list_a)):
+    result.append(list_a[i])
+    result.append(list_b[i])
 
-print(' '.join(result))
+print(*result)
+# print(' '.join(result))
