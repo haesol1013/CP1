@@ -6,6 +6,13 @@ def norm(num_list: list) -> float:
     return round(hap**0.5, 2)
 
 
+def norm2(num_list: list) -> float:
+    result = 0
+    for i in num_list:
+        result += i**2
+    return round(result**0.5, 2)
+
+
 if __name__ == "__main__":
     list_a = map(int, input().split())
-    print(norm(list_a))
+    print(norm2(list_a))
