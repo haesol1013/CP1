@@ -8,7 +8,7 @@ def max_collatz(roster: list) -> int:
         cal_list = [tmp]
 
         while tmp != 1:
-            tmp = tmp // 2 if tmp % 2 == 0 else 3 * tmp + 1
+            tmp = tmp // 2 if tmp % 2 == 0 else 3*tmp + 1
             cal_list.append(tmp)
 
         max_list.append(max(cal_list))
