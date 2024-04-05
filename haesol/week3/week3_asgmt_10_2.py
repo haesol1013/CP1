@@ -1,10 +1,9 @@
-N = int(input())
-def is_prime(number):
-    return not any(number % i == 0 for i in range(2, int(number ** 0.5) + 1))
+n = int(input())
+cnt = 0
 
-count = 0
-for i in range(2, N+1):
-    if is_prime(i):
-        count += 1
+for i in range(2, n+1):
+    divisor_list = [j for j in range(2, i+1) if i % j == 0]
+    if len(divisor_list) == 1:
+        cnt += 1
 
-print(count)
+print(cnt)
