@@ -1,17 +1,14 @@
-import time
-start = time.time()
 
 
 def max_collatz(roster: list) -> int:
     max_list = []
 
     for i in roster:
-        tmp = i
-        cal_list = [tmp]
+        cal_list = [i]
 
-        while tmp != 1:
-            tmp = tmp // 2 if tmp % 2 == 0 else 3 * tmp + 1
-            cal_list.append(tmp)
+        while i != 1:
+            i = i // 2 if i % 2 == 0 else 3 * i + 1
+            cal_list.append(i)
 
         max_list.append(max(cal_list))
         del cal_list
@@ -22,4 +19,3 @@ def max_collatz(roster: list) -> int:
 if __name__ == "__main__":
     list_a = list(map(int, input().split()))
     print(max_collatz(list_a))
-    print("time:", time.time() - start)
