@@ -1,8 +1,5 @@
-import sys
-
-
-n, m, q = map(int, sys.stdin.readline().split())
+n, m, q = map(int, input().split())
 
 
 for test in range(q):
-    input_data = list(map(int, sys.stdin.readline().split()))
+    input_data = list(map(int, input().split()))
