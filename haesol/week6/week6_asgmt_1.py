@@ -1,8 +1,7 @@
 
 
 def unique(list_a: list, list_b: list) -> set:
-    set_a, set_b = set(list_a), set(list_b)
-    return set_a.symmetric_difference(set_b)
+    return set(list_a).symmetric_difference(set(list_b))
 
 
 if __name__ == "__main__":
