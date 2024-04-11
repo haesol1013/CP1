@@ -1,6 +1,6 @@
 
 
-def phonetic(value):
+def phonetic(value: str) -> str:
     alphabet = {"A": "Alpha", "B": "Bravo", "C": "Charlie", "D": "Delta", "E": "Echo",
                 "F": "Foxstrot", "G": "Golf", "H": "Hotel", "I": "India", "J": "Juliet",
                 "K": "Kilo", "L": "Lima", "M": "Mike", "N": "November", "O": "Oscar",
