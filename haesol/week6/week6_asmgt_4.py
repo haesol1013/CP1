@@ -1,18 +1,18 @@
 
 
 def instagram_debug(post_list: list, user_list: list) -> dict:
-    set_ = set(zip(post_list, user_list))
-    dict_ = {}
+    pair_set = set(zip(post_list, user_list))
+    cnt_dict = {}
 
-    for pairs in set_:
-        post = pairs[0]
+    for pair in pair_set:
+        post = pair[0]
 
-        if post not in dict_:
-            dict_[post] = 1
+        if post not in cnt_dict:
+            cnt_dict[post] = 1
         else:
-            dict_[post] += 1
+            cnt_dict[post] += 1
 
-    return dict_
+    return cnt_dict
 
 
 if __name__ == "__main__":
