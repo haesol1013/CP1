@@ -30,5 +30,6 @@ def triangular_walk(walk: int) -> tuple:
     return pos_list[walk-1]
 
 
-n = int(input())
-print(triangular_walk(n))
+if __name__ == "__main__":
+    n = int(input())
+    print(triangular_walk(n))
