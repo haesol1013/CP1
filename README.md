@@ -4,6 +4,7 @@
 
 ### 🗂️ 파일 접근법
 1. 원하는 사용자의 폴더 (e.g. haesol)
+2. 원하는 파일의 종류 (e.g. assignment)
 2. 원하는 주의 폴더 (e.g. week1)
 3. 해당 주차의 문제 번호 (e.g. week1_asgmt_1)
 
