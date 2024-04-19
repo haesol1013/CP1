@@ -85,7 +85,7 @@ def instagram_debug_1(post_list: list, user_list: list) -> dict:
     return cnt_dict
 
 
-def instagram_debug_3(a, b):
+def instagram_debug_2(a, b):
     return dict(zip(sorted(set(a)), [list(map(lambda x: x[0], set(zip(a, b)))).count(i) for i in sorted(set(a))]))
 
 
