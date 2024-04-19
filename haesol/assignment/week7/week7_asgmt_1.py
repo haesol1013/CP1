@@ -1,5 +1,5 @@
 class math:
-    def __init__(self, x=1, y=1):
+    def __init__(self, x=0, y=0):
         self.x = x
         self.y = y
 
@@ -15,17 +15,9 @@ class math:
     def div(self):
         return self.x / self.y
 
-    def pow(self):
-        return self.x ** self.y
 
-    def root(self):
-        return self.x ** (1/self.y)
-
-
-a = math(10, 2)
+a = math(10, 5)
 print(a.add())
 print(a.div())
 print(a.mul())
 print(a.sub())
-print(a.pow())
-print(a.root())
