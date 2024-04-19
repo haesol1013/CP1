@@ -39,12 +39,10 @@ class Beverage:
         other.type = "Trash"
 
 
-a = Beverage(10.5)
-b = Beverage(20)
-c = Beverage(3)
-print(a)
-print(b)
-print(c)
-a + b
-print(a)
-print(b)
+bev_1 = Beverage(40)
+bev_2 = Beverage(30)
+print(bev_1)
+print(bev_2)
+bev_1 + bev_2
+print(bev_1)
+print(bev_2)

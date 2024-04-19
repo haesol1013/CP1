@@ -49,3 +49,12 @@ class integer:
 
     def __sub__(self, other: float) -> int:
         return self.val - int(other)
+
+
+if __name__ == "__main__":
+    num_a = integer(float(input()))
+    num_b = float(input())
+    num_c = float(input())
+
+    print(num_a + num_b)
+    print(num_a - num_c)
