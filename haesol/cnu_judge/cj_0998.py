@@ -57,7 +57,7 @@ def triangular_walk(n: int) -> tuple:
         card += line
 
     pre_card = card - line
-    if n % 2 == 0:
+    if line % 2 == 0:
         x = n - pre_card
         y = card - n + 1
     else:
