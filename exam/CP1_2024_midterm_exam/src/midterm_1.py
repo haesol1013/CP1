@@ -54,12 +54,8 @@ def parity(n: int) -> bool:
             n //= 2
 
         bit.reverse()
-        cnt = bit[:-1].count(1)
 
-        if bit[-1] == 1:
-            return cnt % 2 != 0
-        else:
-            return cnt % 2 == 0
+    return bit.count(1) % 2 == 0
 
 
 n = int(input())
