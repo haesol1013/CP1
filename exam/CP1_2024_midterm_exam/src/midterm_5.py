@@ -34,6 +34,6 @@ def gcd(a: int, b: int, c: int) -> int:
     min_n = min(a, b, c)
     cd = 1
     for i in range(2, min_n+1):
-        if a%i == 0 and b%i == 0 and c%i == 0:
+        if a % i == 0 and b % i == 0 and c % i == 0:
             cd = i
     return cd
