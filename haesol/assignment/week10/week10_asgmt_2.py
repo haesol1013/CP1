@@ -2,7 +2,7 @@ import numpy as np
 
 
 def scale(arr):
-    return round(np.sum(arr/max(arr)), 4)
+    return round(np.sum(arr/np.max(arr)), 4)
 
 
 if __name__ == "__main__":
