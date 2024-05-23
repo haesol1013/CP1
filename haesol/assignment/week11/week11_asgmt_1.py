@@ -3,12 +3,16 @@ import numpy as np
 
 data = np.load("Covid_Decided_Count.npy")
 
-data_str = map(str, data)
-first_digit = np.array([int(x[0]) for x in data_str])
+str_data = map(str, data)
+first_digit = [int(x[0]) for x in str_data]
 cnt = np.bincount(first_digit)[1:]
 
-plt.bar(range(1, 10), cnt)
+# plt.bar(range(1, 10), cnt)
+#
+# plt.xticks(range(1, 10))
+#
+# plt.show()
 
-plt.xticks(range(1, 10))
 
+plt.pie(cnt, labels=list(map(str, range(1, 10))), autopct="%.3f")
 plt.show()
