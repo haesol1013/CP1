@@ -1,17 +1,36 @@
-# CP1 
+# CP1
 
+This repository contains programming assignments, problem-solving exercises, and exam solutions for **CP1 course** at **CNU** in 2024. It serves as a structured collection of coursework completed throughout the semester.
 
+## 📂 **Repository Structure**
 
-### 🗂️ 파일 접근법
-1. 원하는 사용자의 폴더 (e.g. haesol)
-2. 원하는 파일의 종류 (e.g. assignment)
-2. 원하는 주의 폴더 (e.g. week1)
-3. 해당 주차의 문제 번호 (e.g. week1_asgmt_1)
+The repository is divided into multiple directories based on the type of coursework.
 
-### 📝 이용 가이드
-1. 문제를 최대한 풀어본 뒤
-2. 도저히 방법이 떠오르지 않으면
-3. 다른 사람의 풀이를 확인해 보고(복사X)
-4. 스스로 코드를 다시 작성해본다
+| Folder                             | Description                                                                                                |
+|------------------------------------|------------------------------------------------------------------------------------------------------------|
+| [`assignments/`](./assignments/)   | Contains all programming assignments for the **CP1 course**.                                               |
+| [`cnu_judge/`](./cnu_judge/)       | Includes solutions to problems from the **[CNU Judge](http://168.188.128.102/)** problem-solving platform. |
+| [`exams/`](./exams/)               | Stores exam-related code and solutions.                                                                    |
+| ├── [`midterm/`](./exams/midterm/) | Code solutions for the **Midterm Exam**.                                                                   |
+| ├── [`final/`](./exams/final/)     | Code solutions for the **Final Exam**.                                                                     |
 
-※변수명은 다시 작성해보기!!
+## 🚀 **How to Use This Repository**
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/haesol1013/CP1.git
+   cd CP1
+   ```
+
+2. Navigate to a specific folder:
+
+   ```bash
+   cd assignments/week01
+   ```
+
+3. Run Python files:
+
+   ```bash
+   python week1_asgmt_1.py
+   ```
