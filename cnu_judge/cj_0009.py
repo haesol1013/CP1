@@ -8,6 +8,7 @@ for i in range(n):
     shape = int(shape)
     radius = float(radius)
     rpm = float(rpm)
+
     if shape == 0:
         perimeter = 2 * radius * math.pi
     else:
