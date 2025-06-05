@@ -34,7 +34,7 @@ N 이하의 소수들의 합을 출력합니다.
 출력: 77
 """""""""
 
-def is_prime(n, divisor=2):
+def is_prime(n: int, divisor: int=2):
     if n == divisor:
         return True
 
@@ -44,7 +44,7 @@ def is_prime(n, divisor=2):
         return is_prime(n, divisor+1)
 
 
-def sum_of_primes(n):
+def sum_of_primes(n: int):
     if n < 2:
         return "Incorrect input"
     return sum(i for i in range(2, n+1) if is_prime(i))
