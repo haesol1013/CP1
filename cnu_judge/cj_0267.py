@@ -49,9 +49,9 @@ def extract(term: str):
         return False
 
     if "^" in term:
-        power = int("".join(term[term.index("^") + 1:]))
+        degree = int("".join(term[term.index("^")+1:]))
     else:
-        power = 1
+        degree = 1
 
     if "*" in term:
         coe = "".join(term[:term.index("*")])
@@ -59,33 +59,33 @@ def extract(term: str):
         coe = "-1"
     else:
         coe = "+1"
-    return [power, coe]
+    return degree, coe
 
 
-def polynomial(poly: str):
-    if "x" not in poly:
+def polynomial(expression: str):
+    if "x" not in expression:
         return ""
-    terms = dict()
-    end = 0
-    for idx, val in enumerate(poly):
+
+    terms_dict = dict()
+    start = 0
+    for idx, val in enumerate(expression):
         if val == "-" and idx == 0:
             pass
         elif val == "+" or val == "-":
-            if extract(poly[end:idx]):
-                power, coe = extract(poly[end:idx])
-                terms[power] = coe
-            end = idx
-        elif idx == len(poly) - 1:
-            if extract(poly[end:]):
-                power, coe = extract(poly[end:])
-                terms[power] = coe
+            if extract(expression[start:idx]):
+                degree, coe = extract(expression[start:idx])
+                terms_dict[degree] = coe
+            start = idx
+        elif idx == len(expression)-1:
+            if extract(expression[start:]):
+                degree, coe = extract(expression[start:])
+                terms_dict[degree] = coe
             break
 
-    new_arr = []
-    for i in range(max(terms.keys()), 0, -1):
-        tmp = terms[i] if i in terms.keys() else "0"
-        new_arr.append(tmp)
-    return ",".join(new_arr)
+    result = []
+    for i in range(max(terms_dict.keys()), 0, -1):
+        result.append(terms_dict[i] if i in terms_dict.keys() else "0")
+    return ",".join(result)
 
 
 if __name__ == "__main__":
