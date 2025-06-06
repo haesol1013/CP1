@@ -44,52 +44,63 @@ image.png
 """""""""
 
 
-def extract(term: str):
+def parse_term(term: str) -> tuple[int, str] | None:
     if "x" not in term:
-        return False
+        return None
 
-    if "^" in term:
-        degree = int("".join(term[term.index("^")+1:]))
-    else:
-        degree = 1
+    degree = int(term[term.index("^")+1:]) if "^" in term else 1
 
     if "*" in term:
-        coe = "".join(term[:term.index("*")])
-    elif term[0] == "-":
-        coe = "-1"
+        coefficient = term[:term.index("*")]
+    elif term.startswith("-"):
+        coefficient = "-1"
     else:
-        coe = "+1"
-    return degree, coe
+        coefficient = "1"
+    coefficient = coefficient.lstrip("+")
+
+    return degree, coefficient
 
 
-def polynomial(expression: str):
+def split_terms(expression: str) -> list[str]:
+    terms = []
+    start = 0
+    for i, char in enumerate(expression):
+        if char in "+-" and i > 0:
+            terms.append(expression[start:i])
+            start = i
+    terms.append(expression[start:])
+    return terms
+
+
+def polynomial(expression: str) -> str:
     if "x" not in expression:
         return ""
 
-    terms_dict = dict()
-    start = 0
-    for idx, val in enumerate(expression):
-        if val == "-" and idx == 0:
-            pass
-        elif val == "+" or val == "-":
-            if extract(expression[start:idx]):
-                degree, coe = extract(expression[start:idx])
-                terms_dict[degree] = coe
-            start = idx
-        elif idx == len(expression)-1:
-            if extract(expression[start:]):
-                degree, coe = extract(expression[start:])
-                terms_dict[degree] = coe
-            break
+    coefficients = dict()
+    for term in split_terms(expression):
+        term_data = parse_term(term)
+        if term_data:
+            degree, coefficient = term_data
+            coefficients[degree] = coefficient
 
-    result = []
-    for i in range(max(terms_dict.keys()), 0, -1):
-        result.append(terms_dict[i] if i in terms_dict.keys() else "0")
+    if not coefficients:
+        return ""
+    
+    max_degree = max(coefficients.keys())
+    result = [coefficients.get(i, "0") for i in range(max_degree, 0, -1)]
     return ",".join(result)
 
 
 if __name__ == "__main__":
-    print(polynomial("3*x^3+5.4*x^2+17*x^5-6"))
-    print(polynomial("2*x+3"))
-    print(polynomial("-x-1"))
-    print(polynomial("6*x-7*x^6+2^2"))
+    test_cases = [
+        "3*x^3+5.4*x^2+17*x^5-6",
+        "2*x+3",
+        "-x-1",
+        "6*x-7*x^6+2^2",
+        "2*x+1",
+        "2*x^2",
+        "+3"
+    ]
+
+    for case in test_cases:
+        print(f"{case} >>> {polynomial(case)}")
