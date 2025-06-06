@@ -71,9 +71,8 @@ def _process_term(term: str, coefficients: dict) -> None:
         coefficient = term.split("*")[0]
     else:
         coefficient = "-1" if term.startswith("-") else "1"
-    coefficient = coefficient.lstrip("+")
 
-    coefficients[degree] = coefficient
+    coefficients[degree] = coefficient.lstrip("+")
 
 
 if __name__ == "__main__":
