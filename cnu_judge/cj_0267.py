@@ -44,51 +44,36 @@ image.png
 """""""""
 
 
-def parse_term(term: str) -> tuple[int, str] | None:
-    if "x" not in term:
-        return None
-
-    degree = int(term[term.index("^")+1:]) if "^" in term else 1
-
-    if "*" in term:
-        coefficient = term[:term.index("*")]
-    elif term.startswith("-"):
-        coefficient = "-1"
-    else:
-        coefficient = "1"
-    coefficient = coefficient.lstrip("+")
-
-    return degree, coefficient
-
-
-def split_terms(expression: str) -> list[str]:
-    terms = []
+def polynomial(expression: str) -> str:
+    coefficients = {}
     start = 0
     for i, char in enumerate(expression):
         if char in "+-" and i > 0:
-            terms.append(expression[start:i])
+            _process_term(expression[start:i], coefficients)
             start = i
-    terms.append(expression[start:])
-    return terms
-
-
-def polynomial(expression: str) -> str:
-    if "x" not in expression:
-        return ""
-
-    coefficients = dict()
-    for term in split_terms(expression):
-        term_data = parse_term(term)
-        if term_data:
-            degree, coefficient = term_data
-            coefficients[degree] = coefficient
+    _process_term(expression[start:], coefficients)
 
     if not coefficients:
         return ""
-    
+
     max_degree = max(coefficients.keys())
     result = [coefficients.get(i, "0") for i in range(max_degree, 0, -1)]
     return ",".join(result)
+
+
+def _process_term(term: str, coefficients: dict) -> None:
+    if "x" not in term:
+        return
+
+    degree = int(term.split("^")[1]) if "^" in term else 1
+
+    if "*" in term:
+        coefficient = term.split("*")[0]
+    else:
+        coefficient = "-1" if term.startswith("-") else "1"
+    coefficient = coefficient.lstrip("+")
+
+    coefficients[degree] = coefficient
 
 
 if __name__ == "__main__":
