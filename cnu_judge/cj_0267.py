@@ -68,11 +68,11 @@ def _process_term(term: str, coefficients: dict) -> None:
     degree = int(term.split("^")[1]) if "^" in term else 1
 
     if "*" in term:
-        coefficient = term.split("*")[0]
+        coefficient = term.split("*")[0].lstrip("+")
     else:
         coefficient = "-1" if term.startswith("-") else "1"
 
-    coefficients[degree] = coefficient.lstrip("+")
+    coefficients[degree] = coefficient
 
 
 if __name__ == "__main__":
